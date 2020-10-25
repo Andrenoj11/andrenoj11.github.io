@@ -7,22 +7,29 @@ let flagUrl = [
     ['Myanmar', 'https://sites.google.com/site/aseanbyteachernuanprang/_/rsrc/1450476905678/9-myanmar/national-flag/125px-Flag_of_Myanmar.svg.png'],
     ['Malaysia', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5zJhDbWukc0lBiVPP4DJD85Vec5ON0BvlIA&usqp=CAU'],
     ['Cambodia', 'https://www.maritimecyprus.com/wp-content/uploads/2014/09/cambodia_flag-1.gif'],
-    ['Thailand', 'https://lh3.googleusercontent.com/proxy/8zJ6jgFfTXB3EVqipX5cmZgNACg2fXincbCgOZ1VRGDVchE0A9-WDcVKbXO6I0JDzhkB6msV3ECEddFqyBP1n9JZjCc7JJc98-zQ8UA6kqYiBZ9juFMKjg'],
+    ['Thailand', 'https://t3.ftcdn.net/jpg/01/08/88/60/360_F_108886037_5RMqRn0kavfVgfBFgeKWXdxlRSc6myci.jpg'],
     ['East Timor', 'https://cdn.britannica.com/60/72760-050-4F87197C/Flag-of-East-Timor.jpg'],
     ['Vietnam', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/640px-Flag_of_Vietnam.svg.png'],
 ]
 
 
 
-let jawab1 = ''
-let jawab2 = ''
-let jawab3 = ''
-let jawab4 = ''
-
-
-let right = 'Philippine'
+const textAnswer_1 = document.getElementById('text-answer1')
+const textAnswer_2 = document.getElementById('text-answer2')
+const textAnswer_3 = document.getElementById('text-answer3')
+const textAnswer_4 = document.getElementById('text-answer4')
+const inputId_1 = document.getElementById('option1')
+const inputId_2 = document.getElementById('option2')
+const inputId_3 = document.getElementById('option3')
+const inputId_4 = document.getElementById('option4')
 let buttonChange = document.getElementById('changeButton')
+const answer_respons = document.getElementById('respons')
+let right = 'Philippine'
+
+
+
 buttonChange.addEventListener('click', function () {
+    answer_respons.innerText = ''
     let rand = Math.floor(Math.random() * 11)
     document.getElementById('flag').src = flagUrl[rand][1]
     right = ''
@@ -38,93 +45,82 @@ buttonChange.addEventListener('click', function () {
             arrAnswer.push(flagUrl[rand + i][0])
         }
     }
-    let randAnswer = Math.floor(Math.random() * 3.9)
+    let randAnswer = Math.floor(Math.random() * 4)
     if (randAnswer == 0) {
-        document.getElementById('text-answer1').innerHTML = arrAnswer[randAnswer]
-        document.getElementById('option1').value = arrAnswer[randAnswer]
-        document.getElementById('text-answer2').innerHTML = arrAnswer[randAnswer + 3]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 3]
+        textAnswer_1.innerHTML = arrAnswer[randAnswer]
+        inputId_1.value = arrAnswer[randAnswer]
+        textAnswer_2.innerHTML = arrAnswer[randAnswer + 3]
+        inputId_2.value = arrAnswer[randAnswer + 3]
 
-        document.getElementById('text-answer3').innerHTML = arrAnswer[randAnswer + 2]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 2]
+        textAnswer_3.innerHTML = arrAnswer[randAnswer + 2]
+        inputId_3.value = arrAnswer[randAnswer + 2]
 
-        document.getElementById('text-answer4').innerHTML = arrAnswer[randAnswer + 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 1]
+        textAnswer_4.innerHTML = arrAnswer[randAnswer + 1]
+        inputId_4.value = arrAnswer[randAnswer + 1]
 
     } else if (randAnswer == 1) {
-        document.getElementById('text-answer1').innerHTML = arrAnswer[randAnswer]
-        document.getElementById('option1').value = arrAnswer[randAnswer]
+        textAnswer_1.innerHTML = arrAnswer[randAnswer]
+        inputId_1.value = arrAnswer[randAnswer]
 
-        document.getElementById('text-answer2').innerHTML = arrAnswer[randAnswer + 2]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 2]
+        textAnswer_2.innerHTML = arrAnswer[randAnswer + 2]
+        inputId_2.value = arrAnswer[randAnswer + 2]
 
-        document.getElementById('text-answer3').innerHTML = arrAnswer[randAnswer + 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 1]
+        textAnswer_3.innerHTML = arrAnswer[randAnswer + 1]
+        inputId_3.value = arrAnswer[randAnswer + 1]
 
-        document.getElementById('text-answer4').innerHTML = arrAnswer[randAnswer - 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 1]
+        textAnswer_4.innerHTML = arrAnswer[randAnswer - 1]
+        inputId_4.value = arrAnswer[randAnswer - 1]
 
     } else if (randAnswer == 2) {
-        document.getElementById('text-answer1').innerHTML = arrAnswer[randAnswer - 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 1]
+        textAnswer_1.innerHTML = arrAnswer[randAnswer - 1]
+        inputId_1.value = arrAnswer[randAnswer - 1]
 
-        document.getElementById('text-answer2').innerHTML = arrAnswer[randAnswer - 2]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 2]
+        textAnswer_2.innerHTML = arrAnswer[randAnswer - 2]
+        inputId_2.value = arrAnswer[randAnswer - 2]
 
-        document.getElementById('text-answer3').innerHTML = arrAnswer[randAnswer + 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer + 1]
+        textAnswer_3.innerHTML = arrAnswer[randAnswer + 1]
+        inputId_3.value = arrAnswer[randAnswer + 1]
 
-        document.getElementById('text-answer4').innerHTML = arrAnswer[randAnswer]
-        document.getElementById('option1').value = arrAnswer[randAnswer]
+        textAnswer_4.innerHTML = arrAnswer[randAnswer]
+        inputId_4.value = arrAnswer[randAnswer]
 
     } else if (randAnswer == 3) {
-        document.getElementById('text-answer1').innerHTML = arrAnswer[randAnswer]
-        document.getElementById('option1').value = arrAnswer[randAnswer]
+        textAnswer_1.innerHTML = arrAnswer[randAnswer]
+        inputId_1.value = arrAnswer[randAnswer]
 
-        document.getElementById('text-answer2').innerHTML = arrAnswer[randAnswer - 2]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 2]
+        textAnswer_2.innerHTML = arrAnswer[randAnswer - 2]
+        inputId_2.value = arrAnswer[randAnswer - 2]
 
-        document.getElementById('text-answer3').innerHTML = arrAnswer[randAnswer - 3]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 3]
+        textAnswer_3.innerHTML = arrAnswer[randAnswer - 3]
+        inputId_3.value = arrAnswer[randAnswer - 3]
 
-        document.getElementById('text-answer4').innerHTML = arrAnswer[randAnswer - 1]
-        document.getElementById('option1').value = arrAnswer[randAnswer - 1]
+        textAnswer_4.innerHTML = arrAnswer[randAnswer - 1]
+        inputId_4.value = arrAnswer[randAnswer - 1]
+
 
     }
 })
-
-
-function myFunction() {
-    var ele = document.getElementsByName('answerNat');
-
-    for (i = 0; i < ele.length; i++) {
-        if (ele[i].checked)
-            document.getElementById("bla").innerHTML = "Country: " + ele[i].value;
-    }
-}
-
-console.log(document.getElementsByName('answerNat').value);
-
-
 
 let buttonAnswer = document.getElementById('btnAnswer')
 buttonAnswer.addEventListener('click', function () {
     let trueFlag = document.getElementById('flag').src
     let answer = ''
+    let clientAns = ''
+    var ele = document.getElementsByName('answersNat');
     for (let i = 0; i < flagUrl.length; i++) {
         if (flagUrl[i][1] == trueFlag) {
             answer += flagUrl[i][0]
         }
     }
-    console.log(answer);
-    document.getElementById('respons').innerHTML = `<h3>It's ${right.toUpperCase()}</h3>`
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked)
+            clientAns+= ele[i].value
+    }
+    if (answer == clientAns) {
+        document.getElementById('respons').innerHTML = `<h3>You're right. It's ${right.toUpperCase()}</h3>`
+    } else {
+        document.getElementById('respons').innerHTML = `<h3>You're wrong. It's ${right.toUpperCase()}</h3>`
+    }    
 })
 
 
-function myFunction() {
-    var x = document.getElementById("option1").nextSibling.innerHTML;
-    document.getElementById("respons").innerHTML = x;
-}
-
-let y = document.getElementById("option1").nextSibling.innerText
-console.log(y);
